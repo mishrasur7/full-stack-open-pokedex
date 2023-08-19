@@ -31,7 +31,7 @@ jobs:
           wait-on: http://localhost:5001
       - name: tag_release
         if: ${{ github.event_name == 'push' &&  !contains(join(github.event.commits.*.message, ' '), '#skip') }}
-        uses: anothrNick/github-tag-action@f84525cea03f02bddf4da4bb0f393b6ac661ef1c
+        uses: anothrNick/github-tag-action@1.67.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
