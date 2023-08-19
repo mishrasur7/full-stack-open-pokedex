@@ -30,7 +30,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5001
   tag_release:
-    needs: simple_deployment_pipeline
+    needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' }}
     steps:
@@ -38,5 +38,3 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
-          DRY_RUN: true
-          GIT_DISCOVERY_ACROSS_FILESYSTEM: true
