@@ -1,0 +1,15 @@
+name: Scheduling 
+on:
+  push: 
+  branches:
+    - master
+jobs: 
+  schedule: 
+    name: periodic_scheluding
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://pokeman.fly.dev/
+          follow-redirect: false
