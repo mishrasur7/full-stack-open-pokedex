@@ -7,7 +7,6 @@ on:
     branches: [master]
     types: [opened, synchronize]
 jobs:
-  notify:
     runs-on: ubuntu-20.04
     - name: Test Success
     uses: rjstone/discord-webhook-notify@v1
