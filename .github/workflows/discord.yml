@@ -7,7 +7,7 @@ on:
     branches: [master]
     types: [opened, synchronize]
 jobs:
-  notify:
+  notification:
     runs-on: ubuntu-20.04
     steps:
       - name: Test Success
