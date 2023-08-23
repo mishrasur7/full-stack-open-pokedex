@@ -1,7 +1,7 @@
 name: Scheduling 
 on:
   schedule: 
-    - cron: '10 4 * * *'
+    - cron: '15 4 * * *'
 jobs: 
   schedule: 
     name: periodic_scheluding
