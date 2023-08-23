@@ -1,4 +1,4 @@
-name: Fly Deploy
+name: Discord Deploy
 on:
   push:
     branches:
