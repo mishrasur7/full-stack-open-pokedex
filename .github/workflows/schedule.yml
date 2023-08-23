@@ -12,3 +12,4 @@ jobs:
         with:
           url: https://pokeman.fly.dev/
           follow-redirect: false
+          max-attempts: 1
