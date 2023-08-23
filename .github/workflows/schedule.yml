@@ -1,8 +1,7 @@
 name: Scheduling 
 on:
-  push: 
-    branches:
-      - master
+  schedule: 
+    - cron: '15 4 * * *'
 jobs: 
   schedule: 
     name: periodic_scheluding
