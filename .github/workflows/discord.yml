@@ -8,26 +8,26 @@ on:
     types: [opened, synchronize]
 jobs:
   notify:
-    name: Notify in discord
     runs-on: ubuntu-20.04
-    - name: Test Success
-      uses: rjstone/discord-webhook-notify@v1
-      if: success()
-      with:
-        severity: info
-        details: Test Succeeded!
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-    - name: Test Failure
-      uses: rjstone/discord-webhook-notify@v1
-      if: failure()
-      with:
-        severity: error
-        details: Test Failed!
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-    - name: Test Cancelled
-      uses: rjstone/discord-webhook-notify@v1
-      if: cancelled()
-      with:
-        severity: warn
-        details: Test Cancelled!
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+    steps:
+      - name: Test Success
+        uses: rjstone/discord-webhook-notify@v1
+        if: success()
+        with:
+          severity: info
+          details: Test Succeeded!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Test Failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+          severity: error
+          details: Test Failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Test Cancelled
+        uses: rjstone/discord-webhook-notify@v1
+        if: cancelled()
+        with:
+          severity: warn
+          details: Test Cancelled!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
